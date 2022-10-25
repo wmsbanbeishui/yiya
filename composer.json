@@ -1,0 +1,51 @@
+{
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.0",
+        "yiisoft/yii2": "~2.0.6",
+        "yiisoft/yii2-bootstrap": "~2.0.0",
+        "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
+        "yiisoft/yii2-redis": "~2.0.0",
+        "qiniu/php-sdk": "^7.2",
+        "kartik-v/yii2-date-range": "1.6.7",
+        "kartik-v/yii2-export": "*",
+        "kartik-v/yii2-grid": "*",
+        "kartik-v/yii2-password": "*",
+        "kartik-v/yii2-widget-alert": "*",
+        "kartik-v/yii2-widget-datepicker": "*",
+        "kartik-v/yii2-widget-datetimepicker": "*",
+        "kartik-v/yii2-widget-depdrop": "*",
+        "kartik-v/yii2-widget-fileinput": "*",
+        "kartik-v/yii2-widget-growl": "*",
+        "kartik-v/yii2-widget-select2": "*",
+        "kartik-v/yii2-widget-sidenav": "*",
+        "kartik-v/yii2-widget-typeahead": "*",
+        "liyunfang/yii2-widget-linkpager": "dev-master",
+        "kucha/ueditor": "*",
+        "phpoffice/phpspreadsheet": "^1.8",
+        "alibabacloud/client": "^1.5",
+        "getuilaboratory/getui-pushapi-php-client-v2": "dev-master",
+        "godruoyi/php-snowflake": "^1.1"
+    },
+    "require-dev": {
+        "yiisoft/yii2-debug": "~2.0.0",
+        "yiisoft/yii2-gii": "~2.0.0",
+        "yiisoft/yii2-faker": "~2.0.0"
+    },
+    "config": {
+        "process-timeout": 1800,
+        "fxp-asset": {
+            "enabled": false
+        }
+    },
+    "repositories": {
+        "0": {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        },
+        "packagist": {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer/"
+        }
+    }
+}
