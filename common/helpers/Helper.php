@@ -692,8 +692,8 @@ class Helper
         }
 
         // 接口调试临时加的
-        if (isset($_SERVER['HTTP_HOST']) && in_array($_SERVER['HTTP_HOST'], ['192.168.0.114:8088', '192.168.0.114:8089'])) {
-            $img_host = '192.168.0.114:8084';
+        if (isset($_SERVER['HTTP_HOST']) && in_array($_SERVER['HTTP_HOST'], ['47.107.73.157:8083'])) {
+            $img_host = '47.107.73.157:8083';
         }
 
         $request_scheme = isset($_SERVER['REQUEST_SCHEME']) ? $_SERVER['REQUEST_SCHEME'] : 'http';
