@@ -11,7 +11,7 @@ class PictureController extends BaseController
 {
     protected static function normalAction()
     {
-        return ['index'];
+        return ['index', 'index2'];
     }
 
     public function actionIndex()
