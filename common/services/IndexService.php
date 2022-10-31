@@ -29,7 +29,7 @@ class IndexService
 
         foreach ($items as &$item) {
            // $item['picture'] = Helper::getImageUrl($item['picture']);
-            $item['picture'] = 'http://rke29chv6.hn-bkt.clouddn.com/20221031_150309_765.jpg';
+            $item['picture'] = 'http://rke29chv6.hn-bkt.clouddn.com/picture/20221031_150309_765.jpg';
         }
         unset($item);
 
