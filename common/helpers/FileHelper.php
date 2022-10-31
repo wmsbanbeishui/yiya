@@ -2,6 +2,7 @@
 
 namespace common\helpers;
 
+use common\services\QiniuService;
 use Yii;
 
 class FileHelper
@@ -311,6 +312,17 @@ class FileHelper
             $filename = iconv($encoding, 'GBK', $fileName);
         }
         return $filename;
+    }
+
+    public static function qnUpload($file_path, $key, $limit_size = 1024000, $private = false, $save_local = true)
+    {
+        if (QiniuService::upload($file_path, $key, $private)) {
+            if ($save_local === false) {
+                unlink($file_path);
+            }
+        }
+
+        return ['errno' => 0, 'key' => $key];
     }
 
 }

@@ -1,0 +1,60 @@
+html,
+body {
+    height: 100%;
+}
+
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+.full_container {
+    height: calc(100vh);
+    overflow-y: scroll;
+}
+
+.api-switch {
+    border-radius: 4px;
+    border: 1px solid #CCC;
+    height: 32px;
+    margin: 0;
+    padding: 0;
+}
+
+.switch-span, .switch-span1 {
+    line-height: 32px;
+    float: left;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+.sactive {
+    background: red;
+    color: #fff;
+}
+
+.upload-per {
+    background-image: url(images/red.gif);
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    border: 1px solid #CCC;
+    display: none;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+}
+
+/*登录*/
+.site-login {
+    width: 800px;
+    margin: 0 auto;
+    padding: 87px;
+    box-shadow: 4px 4px 25px #cccccc;
+    height: 590px;
+    margin-top: 80px;
+}

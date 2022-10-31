@@ -16,6 +16,7 @@ class PictureService
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort' => ['defaultOrder' => ['date' => SORT_DESC]],
             'pagination' => [
                 'pageSize' => $pageSize,
                 'page' => $page ? $page - 1 : 0

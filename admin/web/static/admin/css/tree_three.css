@@ -1,0 +1,121 @@
+.menus li {
+	margin-left: 20px;
+	line-height: 24px;
+	cursor: pointer;
+	background-position: -292px -4px;
+	background-repeat: repeat-y;
+	background-image: url(/static/admin/images/32px.png);
+	min-height: 24px;
+	line-height: 24px;
+	margin-left: 24px;
+	min-width: 24px;
+}
+
+.menus ul .permission span {
+	color: #0183FE;
+}
+
+.menus p,
+.menus span,
+.menus i {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.menus li:last-of-type {
+	background: 0 0;
+}
+
+.p-top-title span:first-of-type {
+	display: inline-block;
+	position: relative;
+	top: -3px;
+	padding-right: 15px !important;
+}
+
+.p-top-title span:last-of-type {
+	background: url("/static/admin/images/uncheck.png") no-repeat center;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	background-size: 100% 100%;
+}
+
+.p-top-title .active {
+	background-image: url("/static/admin/images/checked.png") !important;
+}
+
+.p-top-title i {
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	display: inline-block;
+	background-image: url(/static/admin/images/32px.png);
+	background-position: -68px -4px;
+}
+
+.p-top-title .i_has_child {
+	background-position: -100px -4px !important;
+}
+
+.p-top-title .i_has_child_active {
+	background-position: -132px -4px;
+}
+
+.submit-sure button {
+	width: 180px;
+	height: 32px;
+	color: white !important;
+	font-size: 14px;
+	background-color: #0183FE !important;
+	margin: 30px;
+	text-align: center;
+	float: left;
+	border-radius: 4px;
+}
+
+.input-item {
+	margin-left: 30px;
+	margin-top: 15px;
+}
+
+.input-item label {
+	color: #666666;
+	display: block;
+	font-weight: normal;
+}
+
+.input-item input {
+	height: 28px;
+	border-radius: 5px;
+	min-width: 260px;
+	border: 1px solid #B5B5B5;
+	margin-top: 5px;
+	padding: 0 10px;
+}
+
+.all-control {
+	height: 30px;
+	width: 100px;
+	margin-left: 30px;
+	cursor: pointer;
+}
+
+.all-control span {
+	display: inline-block;
+	position: relative;
+	width: 60px;
+	top: -4px;
+}
+
+.all-control i {
+	background: url(/static/admin/images/uncheck.png) no-repeat center;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	background-size: 100% 100%;
+}
+
+.all-control .active {
+	background-image: url(/static/admin/images/checked.png);
+}

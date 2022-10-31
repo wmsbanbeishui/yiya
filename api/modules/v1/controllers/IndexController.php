@@ -2,8 +2,6 @@
 
 namespace api\modules\v1\controllers;
 
-use common\helpers\FileHelper;
-use common\helpers\Helper;
 use api\modules\v1\controllers\base\BaseController;
 use common\services\IndexService;
 use Yii;

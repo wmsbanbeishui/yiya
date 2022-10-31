@@ -8,6 +8,7 @@ use Yii;
  * This is the model class for table "picture".
  *
  * @property int $id id
+ * @property string $date 日期
  * @property string $name 名称
  * @property string $picture 图片
  * @property int $is_push 是否推送到首页
@@ -29,8 +30,8 @@ class PictureBase extends \common\extensions\ActiveRecord
     public function rules()
     {
         return [
+            [['date', 'create_time'], 'safe'],
             [['is_push'], 'integer'],
-            [['create_time'], 'safe'],
             [['name'], 'string', 'max' => 32],
             [['picture'], 'string', 'max' => 255],
         ];
@@ -43,6 +44,7 @@ class PictureBase extends \common\extensions\ActiveRecord
     {
         return [
             'id' => 'id',
+            'date' => '日期',
             'name' => '名称',
             'picture' => '图片',
             'is_push' => '是否推送到首页',
