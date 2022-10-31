@@ -36,6 +36,6 @@ class PictureController extends BaseController
         $pageSize = $request->get('pageSize');
         $page = $request->get('page');
 
-        return PictureService::getList($pageSize, $page);
+        return PictureService::getList($name = null, $pageSize, $page);
     }
 }

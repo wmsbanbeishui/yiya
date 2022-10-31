@@ -8,7 +8,7 @@ use yii\data\ActiveDataProvider;
 
 class PictureService
 {
-    public static function getList($name, $pageSize = 20, $page = 1)
+    public static function getList($name = null, $pageSize = 20, $page = 1)
     {
         $query = Picture::find()->asArray();
 
