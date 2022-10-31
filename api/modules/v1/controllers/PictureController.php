@@ -29,4 +29,13 @@ class PictureController extends BaseController
 
         return PictureService::getList($name, $pageSize, $page);
     }
+
+    public function actionIndex2()
+    {
+        $request = Yii::$app->request;
+        $pageSize = $request->get('pageSize');
+        $page = $request->get('page');
+
+        return PictureService::getList($pageSize, $page);
+    }
 }
