@@ -23,7 +23,7 @@ class Picture extends PictureBase
     public function attributeLabels()
     {
         return array_merge(parent::attributeLabels(), [
-            'is_push' => '是否推荐'
+            'is_push' => '推荐'
         ]);
     }
 

@@ -3,7 +3,6 @@
 namespace api\modules\v1\controllers;
 
 use api\modules\v1\controllers\base\BaseController;
-use common\helpers\Helper;
 use common\services\PictureService;
 use Yii;
 

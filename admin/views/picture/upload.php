@@ -32,6 +32,24 @@ $this->registerCssFile('/static/admin/css/index.css?');
             ],
         ]); ?>
 
+        <div class="form-group">
+            <label class="control-label col-lg-1">日期</label>
+            <div class="col-lg-3">
+                <?php echo DatePicker::widget([
+                    'name' => 'Picture[date]',
+                    'value' => $model->isNewRecord ? date('Y-m-d') : $model->date,
+                    'options' => ['id' => 'PictureDate', 'placeholder' => ''],
+                    'pluginOptions' => [
+                        'format' => 'yyyy-mm-dd',
+                        'todayHighlight' => true,
+                    ],
+                ]); ?>
+            </div>
+            <div class="col-lg-8">
+                <div class="help-block"></div>
+            </div>
+        </div>
+
         <?php
         $pluginOptions = [
             'showUpload' => false,
@@ -54,26 +72,6 @@ $this->registerCssFile('/static/admin/css/index.css?');
 
         ?>
 
-        <?= $form->field($model, 'is_push')->dropDownList(Picture::pushMap()) ?>
-
-        <div class="form-group">
-            <label class="control-label col-lg-1">日期</label>
-            <div class="col-lg-3">
-                <?php echo DatePicker::widget([
-                    'name' => 'Picture[date]',
-                    'value' => $model->isNewRecord ? date('Y-m-d') : $model->date,
-                    'options' => ['id' => 'PictureDate', 'placeholder' => ''],
-                    'pluginOptions' => [
-                        'format' => 'yyyy-mm-dd',
-                        'todayHighlight' => true,
-                    ],
-                ]); ?>
-            </div>
-            <div class="col-lg-8">
-                <div class="help-block"></div>
-            </div>
-        </div>
-
         <?= $form->field($model, 'picture[]')->widget(FileInput::className(), [
             'resizeImages' => true,
             'options' => [
@@ -84,6 +82,8 @@ $this->registerCssFile('/static/admin/css/index.css?');
             'pluginEvents' => [],
         ]);
         ?>
+
+        <?= $form->field($model, 'is_push')->dropDownList(Picture::pushMap()) ?>
 
         <div class="form-group">
             <div class="col-lg-offset-1 col-lg-11">
