@@ -16,13 +16,13 @@ $gridColumns = [
     'id',
     'date',
     //'name',
-    [
+    /*[
         'attribute' => 'picture',
         'format' => 'raw',
         'value' => function ($model) {
             return Html::img(Helper::getImageUrl($model->picture), ['width' => '5px']);
         }
-    ],
+    ],*/
     /*[
         'header' => '上传多图',
         'format' => 'raw',
