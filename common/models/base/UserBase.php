@@ -10,7 +10,9 @@ use Yii;
  * @property int $id id
  * @property string $name 姓名
  * @property int $mobile 手机号
+ * @property string $avatar 头像
  * @property string $token token
+ * @property string $open_id openid
  * @property string $password 密码
  * @property int $status 状态(0-禁用；1-正常)
  * @property string $create_time 创建时间
@@ -35,8 +37,9 @@ class UserBase extends \common\extensions\ActiveRecord
             [['mobile', 'status'], 'integer'],
             [['create_time', 'update_time'], 'safe'],
             [['name'], 'string', 'max' => 32],
+            [['avatar'], 'string', 'max' => 255],
             [['token'], 'string', 'max' => 50],
-            [['password'], 'string', 'max' => 128],
+            [['open_id', 'password'], 'string', 'max' => 128],
         ];
     }
 
@@ -49,7 +52,9 @@ class UserBase extends \common\extensions\ActiveRecord
             'id' => 'id',
             'name' => '姓名',
             'mobile' => '手机号',
+            'avatar' => '头像',
             'token' => 'token',
+            'open_id' => 'openid',
             'password' => '密码',
             'status' => '状态(0-禁用；1-正常)',
             'create_time' => '创建时间',

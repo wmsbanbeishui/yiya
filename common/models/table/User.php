@@ -2,6 +2,7 @@
 
 namespace common\models\table;
 
+use common\helpers\Helper;
 use common\models\base\UserBase;
 use common\validator\MobileValidator;
 use Yii;
@@ -30,7 +31,10 @@ class User extends UserBase implements IdentityInterface {
      * @inheritdoc
      */
     public static function findIdentityByAccessToken($token, $type = null) {
-        return null;
+        if (empty($token)) {
+            return null;
+        }
+        return static::findOne(['token' => $token]);
     }
 
     /**
@@ -80,5 +84,24 @@ class User extends UserBase implements IdentityInterface {
      */
     public function setPassword($password) {
         $this->password = $this->encryptPassword($password);
+    }
+
+    public function login()
+    {
+        $user_data = [
+            'id' => $this->id,
+            'mobile' => $this->mobile,
+            'open_id' => $this->open_id,
+            'token' => $this->token,
+            'name' => $this->name,
+            'avatar' => $this->avatar,
+            'full_avatar' => Helper::getImageUrl($this->avatar)
+        ];
+
+        if (!$this->save()) {
+            return false;
+        }
+
+        return $user_data;
     }
 }

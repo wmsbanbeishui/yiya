@@ -66,17 +66,6 @@ class UserController extends BaseController
 
 	public function actionLogout()
 	{
-		// 记录登出日志
-		$admin_log = new AdminLog();
-		$admin_log->admin_id = Yii::$app->user->id;
-		$admin_log->table = 'admin';
-		$admin_log->action = 5;
-		$success = $admin_log->save();
-		if (!$success) {
-			$error = $admin_log->getErrors();
-			Helper::fLogs([$error, $_SERVER], 'admin_log_save_error.log');
-		}
-
 		Yii::$app->user->logout();
 		Message::setMessage('已登出');
 		return $this->redirect(['login']);

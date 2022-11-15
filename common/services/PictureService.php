@@ -27,6 +27,8 @@ class PictureService
 
         foreach ($items as &$item) {
             $item['picture'] = Helper::getImageUrl($item['picture']);
+
+            $item['date'] = $item['date'] ?: '';
         }
         unset($item);
 

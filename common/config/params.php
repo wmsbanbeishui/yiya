@@ -2,11 +2,9 @@
 
 $config = [
     // 微信app_id
-    //'wx_app_id' => 'wx0aa6920b8ae86389',
-    'wx_app_id' => 'wxb1def13a65d88e6f',
+    'wx_app_id' => 'wx5efce0164d648797',
     // 微信app_secret
-    //'wx_app_secret' => '1634a81f0cd8788f7b27585d849e9cd3',
-    'wx_app_secret' => '29e19e6b40379a590213c3cc945b09ae',
+    'wx_app_secret' => 'db6a0c1f2923afc7d1a733cbb943e611',
 
     // 验证码等待秒数
     'sms_code_wait_second' => 60,

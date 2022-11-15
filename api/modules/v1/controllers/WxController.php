@@ -3,17 +3,7 @@
 namespace api\modules\v1\controllers;
 
 use common\helpers\Helper;
-use common\models\table\Order;
 use common\services\WxService;
-use common\models\table\OilCard;
-use common\models\table\Customer;
-use common\models\table\CustOrder;
-use common\models\table\CustCoupon;
-use common\models\table\CustFinance;
-use common\models\table\PointsDetail;
-use common\models\table\CustRecharge;
-use common\models\table\OilCardFinance;
-use common\models\table\OilCardRecharge;
 use api\modules\v1\controllers\base\BaseController;
 use Yii;
 use yii\helpers\ArrayHelper;
@@ -41,13 +31,6 @@ class WxController extends BaseController
      */
     public function actionLogin()
     {
-        /*if (!Helper::is_wx_mini_program()) {
-            return [
-                'code' => 101,
-                'msg' => '非微信小程序禁止访问',
-            ];
-        }*/
-
         $request = Yii::$app->request;
         $code = $request->post('code');
 
@@ -105,13 +88,6 @@ class WxController extends BaseController
      */
     public function actionGetMobile()
     {
-        /*if (!Helper::is_wx_mini_program()) {
-            return [
-                'code' => 201,
-                'msg' => '非微信小程序禁止访问',
-            ];
-        }*/
-
         $request = Yii::$app->request;
         $session3rd = $request->post('session3rd');
         $encryptedData = $request->post('encryptedData');

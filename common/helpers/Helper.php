@@ -692,9 +692,9 @@ class Helper
         }
 
         // 接口调试临时加的
-        /*if (isset($_SERVER['HTTP_HOST']) && in_array($_SERVER['HTTP_HOST'], ['47.107.73.157:8083'])) {
+        if (Yii::$app->id == 'admin' && isset($_SERVER['HTTP_HOST'])) {
             $img_host = '47.107.73.157:8084';
-        }*/
+        }
 
         if (!$img_host) $img_host = 'rke29chv6.hn-bkt.clouddn.com';
 

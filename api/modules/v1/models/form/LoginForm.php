@@ -4,6 +4,7 @@ namespace api\modules\v1\models\form;
 
 use common\helpers\Helper;
 use common\models\table\Customer;
+use common\models\table\User;
 use common\services\CodeMsgService;
 use common\validator\MobileValidator;
 use Yii;
@@ -69,64 +70,29 @@ class LoginForm extends Model
         // 处理姓名
         $tmp_name = '***' . substr($this->mobile, -4);
 
-        $user = Customer::find()->where(['mobile' => $this->mobile, 'status' => 1])->one();
-
-        $validate = true;
-        $transaction = Yii::$app->getDb()->beginTransaction();
-
-        try {
-            if ($user) { // 如果存在，更新登录
-
-                // 如果该 mobile 用户的 openid 与 当前的 openid 不一致，则先清空当前 openid 的用户的 openid，再更新该 mobile 用户的 openid
-                if ($user->open_id != $this->open_id) {
-                    Customer::updateAll(['open_id' => null], ['open_id' => $this->open_id]);
-                    $user->open_id = $this->open_id;
-                }
-
-                // 如果当前用户没有昵称等参数，就做更新操作
-                if (!$user->name) $user->name = $this->nick_name ?: $tmp_name;
-
-                if (!$user->gender) $user->gender = $this->gender ?: $user->gender;
-
-                if (!$user->avatar) $user->avatar = $this->avatar ?: '/image/avatar/default.png';
-
-                if (!$user->save()) {
-                    $validate = false;
-                    Helper::fLogs($user->getFirstErrors(), 'login_error.log');
-                }
-
-            } else { // 如果不存在，注册登录
-                // 先将当前 openid 的用户的 openid 更新为null，再做注册登录操作
-                Customer::updateAll(['open_id' => null], ['open_id' => $this->open_id]);
-
-                $user = new Customer();
-                $user->code = Helper::getOrderCode();
-                $user->mobile = $this->mobile;
-                $user->open_id = $this->open_id;
-                $user->token = Helper::uuid();
-                $user->name = $this->nick_name ?: $tmp_name;
-                $user->avatar = $this->avatar ?: '/image/avatar/default.png';
-                $user->gender = $this->gender ?: '0';
-
-                if (!$user->save()) {
-                    $validate = false;
-                }
-            }
-
-            if ($validate) {
-                $transaction->commit();
-                return $user->login();
-
-            } else {
-                $transaction->rollBack();
-                $this->addError('mobile', '登录失败，请重试');
-                return false;
-            }
-        } catch (\Exception $exception) {
-            $transaction->rollBack();
-            $this->addError('mobile', '登录失败，请重试');
+        $user = User::find()->where(['mobile' => $this->mobile, 'status' => 1])->one();
+Helper::fLogs($user,'test.log');
+        if (empty($user)) {
             return false;
         }
+
+        // 如果该 mobile 用户的 openid 与 当前的 openid 不一致，则先清空当前 openid 的用户的 openid，再更新该 mobile 用户的 openid
+        if ($user->open_id != $this->open_id) {
+            User::updateAll(['open_id' => null], ['open_id' => $this->open_id]);
+            $user->open_id = $this->open_id;
+        }
+
+        // 如果当前用户没有昵称等参数，就做更新操作
+        if (!$user->name) $user->name = $this->nick_name ?: $tmp_name;
+
+        if (!$user->avatar) $user->avatar = $this->avatar ?: '/image/avatar/default.png';
+
+        if (!$user->save()) {
+            Helper::fLogs($user->getFirstErrors(), 'login_error.log');
+            return false;
+        }
+
+        return $user->login();
     }
 
     /**
