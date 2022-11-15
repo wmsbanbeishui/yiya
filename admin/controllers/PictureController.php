@@ -91,7 +91,9 @@ class PictureController extends AuthController
             }
 
             if ($model->save()) {
-                return $this->redirect(['index']);
+                return $this->render('create', [
+                    'model' => new Picture(),
+                ]);
             }
         }
 
@@ -172,7 +174,10 @@ class PictureController extends AuthController
                 }
             }
             Message::setSuccessMsg('上传成功');
-            return $this->redirect('index');
+
+            return $this->render('upload', [
+                'model' => new Picture()
+            ]);
         }
 
         return $this->render('upload', [
