@@ -697,6 +697,7 @@ class Helper
         }
 
         // if (!$img_host) $img_host = 'rke29chv6.hn-bkt.clouddn.com';
+        if (!$img_host) $img_host = '47.107.73.157:8084';
 
         $request_scheme = isset($_SERVER['REQUEST_SCHEME']) ? $_SERVER['REQUEST_SCHEME'] : 'http';
 
