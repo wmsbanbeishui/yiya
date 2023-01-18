@@ -45,3 +45,5 @@ phpunit.phar
 *.zip
 
 /admin/runtime/
+
+/capi/

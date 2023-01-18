@@ -25,7 +25,13 @@
         "phpoffice/phpspreadsheet": "^1.8",
         "alibabacloud/client": "^1.5",
         "getuilaboratory/getui-pushapi-php-client-v2": "dev-master",
-        "godruoyi/php-snowflake": "^1.1"
+        "godruoyi/php-snowflake": "^1.1",
+		"ffmpeg/ffmpeg": "0.18.0",
+        "doctrine/cache": "1.0",
+        "alchemy/binary-driver": "2.0.0",
+        "evenement/evenement": "2.0.0",
+        "symfony/process": "2.8.4",
+        "monolog/monolog": "1.3.1"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
